@@ -23,6 +23,18 @@ dev_dependencies:
 
 # Tool configuration
 secure_localizations:
+  # Optional: A fixed integer key. If omitted, a random key is generated each run.
+  key: 84600683
+
+  # Optional: The command used to generate localizations.
+  # Default is 'gen-l10n'
+  # command: "pub run flutter_localizations_tk:gen_l10n_tk"
+
+  # Optional: Where your ARB files are located.
+  # arb_dir: "lib/l10n"
+
+  # Optional: Where the generated Dart files and helper class should live.
+  # output_dir: "lib/l10n"
 
 flutter:
   generate: true

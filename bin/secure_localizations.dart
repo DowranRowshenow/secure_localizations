@@ -63,10 +63,14 @@ void main() async {
 Map<String, dynamic> _loadConfig() {
   final File file = File('pubspec.yaml');
   if (!file.existsSync()) return <String, dynamic>{};
+
   final dynamic yaml = loadYaml(file.readAsStringSync());
-  if (yaml['secure_localizations'] == null) return <String, dynamic>{};
-  return Map<String, dynamic>.from(
-      yaml['secure_localizations'] as Map<String, dynamic>);
+  final dynamic config = yaml['secure_localizations'];
+
+  if (config == null) return <String, dynamic>{};
+
+  // Using Map.from ensures we convert YamlMap to a standard Dart Map
+  return Map<String, dynamic>.from(config as Map);
 }
 
 void _generateHelperClass(String outputDirPath, int key) {
