@@ -18,7 +18,8 @@ Add `secure_localizations` to your `dev_dependencies` in `pubspec.yaml`:
 dev_dependencies:
   secure_localizations:
     git:
-      url: [https://github.com/DowranRowshenow/secure_localizations.git](https://github.com/DowranRowshenow/secure_localizations.git)
+      url: https://github.com/DowranRowshenow/secure_localizations.git
+      ref: v1.0.1
 ```
 
 ## 🛠 Configuration
