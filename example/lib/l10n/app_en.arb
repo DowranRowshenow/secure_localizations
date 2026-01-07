@@ -1,7 +1,15 @@
 {
     "@@locale": "en",
-    "title": "Secure Localizations",
-    "@title": {},
+    "title": "Secure Localizations {version}!",
+    "@title": {
+        "description": "Title with version",
+        "placeholders": {
+            "version": {
+                "type": "String",
+                "example": "1024"
+            }
+        }
+    },
     "helloWorld": "Hello World",
     "@helloWorld": {}
 }

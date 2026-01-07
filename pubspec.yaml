@@ -1,6 +1,6 @@
 name: secure_localizations
 description: A tool to encrypt ARB files and auto-patch generated localization files with XOR encryption.
-version: 1.0.1
+version: 1.0.2
 # If you plan to publish to pub.dev, add your repository/homepage
 # repository: https://github.com/DowranRowshenow/secure_localizations
 

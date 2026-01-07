@@ -10,7 +10,9 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get title => SecureEncryption.decode('OA4IHhkOSycECAoHAhEKHwIEBRg=');
+  String title(String version) {
+    return SecureEncryption.decode('OA4IHhkOSycECAoHAhEKHwIEBRhL') + version + SecureEncryption.decode('Sg==');
+  }
 
   @override
   String get helloWorld => SecureEncryption.decode('Iw4HBwRLPAQZBw8=');

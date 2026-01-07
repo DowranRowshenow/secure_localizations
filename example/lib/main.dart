@@ -31,8 +31,9 @@ class MyHomePage extends StatelessWidget {
     final AppLocalizations l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar:
-          AppBar(title: Text(l10n.title)), // Assuming appTitle is in your ARB
+      appBar: AppBar(
+          title:
+              Text(l10n.title("v1.1.0"))), // Assuming appTitle is in your ARB
       body: Center(
         child: Text(l10n.helloWorld), // Assuming helloWorld is in your ARB
       ),

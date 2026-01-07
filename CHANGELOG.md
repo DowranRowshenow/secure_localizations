@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0] - 2025-07-20
+## [1.0.2] - 07-01-2026
+
+- **Argument Pass Fix:** Fixed where string gets encoded with its argument.
+
+## [1.0.0] - 07-01-2026
 
 ### Added
 

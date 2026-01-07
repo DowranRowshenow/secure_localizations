@@ -9,7 +9,7 @@ class SecureEncryption {
   static String decode(String encodedBase64) {
     try {
       final Uint8List bytes = base64.decode(encodedBase64);
-      final List<int> decoded = bytes.map((b) => b ^ _byteKey).toList();
+      final List<int> decoded = bytes.map((int b) => b ^ _byteKey).toList();
       return utf8.decode(decoded);
     } catch (e) {
       return encodedBase64;

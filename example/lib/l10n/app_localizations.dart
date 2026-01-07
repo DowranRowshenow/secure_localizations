@@ -93,16 +93,16 @@ abstract class AppLocalizations {
     Locale('en')
   ];
 
-  /// No description provided for @title.
+  /// Title with version
   ///
   /// In en, this message translates to:
-  /// **'OA4IHhkOSycECAoHAhEKHwIEBRg='**
-  String get title;
+  /// **'Secure Localizations {version}!'**
+  String title(String version);
 
   /// No description provided for @helloWorld.
   ///
   /// In en, this message translates to:
-  /// **'Iw4HBwRLPAQZBw8='**
+  /// **'Hello World'**
   String get helloWorld;
 }
 
