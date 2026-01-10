@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.7] - 11-01-2026
+
+- **Ghost Tag**: Fixed Ghost tag v1.0.6 after moving tag from commit
+
+### Fixed
+
 ## [1.0.6] - 10-01-2026
 
 ### Added

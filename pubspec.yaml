@@ -1,6 +1,6 @@
 name: secure_localizations
 description: A tool to encrypt ARB files and auto-patch generated localization files with secure_strings.
-version: 1.0.6
+version: 1.0.7
 
 # Temporary
 publish_to: none
