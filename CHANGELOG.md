@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 10-01-2026
+
+### Added
+
+- **Master-Slave Synchronization:** `secure_localizations` now acts as the master tool, capable of triggering `secure_strings` automatically.
+- **Cross-Package Key Sync:** Implemented a hierarchy logic where the localization key overrides or synchronizes with the strings key via command-line arguments (`--key=`).
+- **Shared Encoder Integration:** Support for build-time encryption using a shared encoder logic to prevent "leakage" in the production binary.
+
 ## [1.0.2] - 07-01-2026
 
 - **Argument Pass Fix:** Fixed where string gets encoded with its argument.

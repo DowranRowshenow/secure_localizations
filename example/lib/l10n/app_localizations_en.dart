@@ -1,4 +1,4 @@
-import 'package:secure_localizations_example/l10n/secure_encryption_helper.dart';
+import 'package:secure_localizations_example/secure_strings/secure_encryption_gr.dart';
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
 import 'app_localizations.dart';
