@@ -19,10 +19,8 @@ void main(List<String> args) async {
 
     final dynamic pubspecYaml =
         loadYaml(File('pubspec.yaml').readAsStringSync());
-    final Map<String, dynamic>? stringsCfg =
-        pubspecYaml[SecureStrings.packageName] as Map<String, dynamic>?;
-    final Map<String, dynamic>? l10nCfg =
-        pubspecYaml[_packageName] as Map<String, dynamic>?;
+    final dynamic stringsCfg = pubspecYaml[SecureStrings.packageName];
+    final dynamic l10nCfg = pubspecYaml[_packageName];
 
     // 1. Resolve the Master Key
     final String stringsOutputDir =
