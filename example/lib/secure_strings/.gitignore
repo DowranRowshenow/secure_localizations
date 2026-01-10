@@ -1,0 +1,3 @@
+# Ignore secure_strings generated files and local key
+.secure_key
+*_gr.dart

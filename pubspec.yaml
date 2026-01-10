@@ -1,6 +1,6 @@
 name: secure_localizations
 description: A tool to encrypt ARB files and auto-patch generated localization files with secure_strings.
-version: 1.0.4
+version: 1.0.6
 
 # Temporary
 publish_to: none
@@ -18,7 +18,7 @@ dependencies:
     git:
       url: https://github.com/DowranRowshenow/secure_strings.git
       # Specify the subdirectory where the pubspec.yaml lives inside the monorepo
-      ref: v1.0.2
+      ref: v1.0.6
 
 dev_dependencies:
   flutter_lints: ^6.0.0

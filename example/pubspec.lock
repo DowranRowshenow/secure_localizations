@@ -150,16 +150,16 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.2"
+    version: "1.0.6"
   secure_strings:
     dependency: transitive
     description:
       path: "."
-      ref: "v1.0.2"
-      resolved-ref: fcb3ad6f1141ad8073dbc314cc5f294091cfb5c7
+      ref: "v1.0.6"
+      resolved-ref: "663c0f6594f8e98cdc5392faf03d7b2d7348e680"
       url: "https://github.com/DowranRowshenow/secure_strings.git"
     source: git
-    version: "1.0.2"
+    version: "1.0.4"
   sky_engine:
     dependency: transitive
     description: flutter

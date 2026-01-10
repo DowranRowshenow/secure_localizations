@@ -23,9 +23,6 @@ dev_dependencies:
 
 # Tool configuration
 secure_localizations:
-  # Optional: A fixed integer key. If omitted, a random key is generated each run.
-  key: 84600683
-
   # Optional: The command used to generate localizations.
   # Default is 'gen-l10n'
   # command: "pub run flutter_localizations_tk:gen_l10n_tk"

@@ -1,0 +1,3 @@
+# Ignore patched localization files
+app_localizations_*.dart
+app_localizations.dart

@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 10-01-2026
+
+### Added
+
+- **Automated Workspace Protection**: `secure_localizations` now automatically generate `.gitignore` files in their respective output directories (`lib/l10n/`).
+- **Source-Only Git Tracking**: Implemented a workflow where only raw data (`*.arb`) is tracked. All generated `.dart` artifacts and local `.secure_key` secrets are now automatically shielded from Git.
+- **Dynamic Package Identity**: Replaced all hardcoded string references with a centralized package name constant for better maintainability across the suite.
+- **Zero-Config Onboarding**: New developers only need to run the generator once to reconstruct the entire encrypted infrastructure locally.
+
+### Changed
+
+- **L10n Security Policy**: Generated `app_localizations_*.dart` files are now treated as temporary artifacts and are ignored by default to prevent key-mismatch conflicts in shared repositories.
+- **Key Resolution Logic**: Updated to use a robust Regex-based parser that handles both raw numbers and `key=12345` assignment styles in the `.secure_key` file.
+
 ## [1.0.4] - 10-01-2026
 
 ### Added
