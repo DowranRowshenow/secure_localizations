@@ -181,9 +181,12 @@ void _applyPatch(File file, String importPath, int key) {
 
   final String patched = content.replaceAllMapped(pattern, (Match match) {
     final String prefix = match.group(1)!;
-    final String fullValue = match.group(2)!;
+    final String fullValue =
+        match.group(2)!; // This is 'Secure Localizations $version!'
 
     if (fullValue == locale) return match.group(0)!;
+
+    String resultBody;
 
     if (fullValue.contains(r'$')) {
       final RegExp varRegex = RegExp(r'(\$[a-zA-Z0-9_]+|\$\{[^}]+\})');
@@ -191,37 +194,37 @@ void _applyPatch(File file, String importPath, int key) {
       int lastMatchEnd = 0;
 
       for (final RegExpMatch m in varRegex.allMatches(fullValue)) {
-        // 1. Encrypt text segment BEFORE the variable
         if (m.start > lastMatchEnd) {
           final String text = fullValue.substring(lastMatchEnd, m.start);
           segments.add(
               "SecureEncryption.decode('${SecureEncryption.encode(text, key)}')");
         }
 
-        // 2. Extract variable name and REMOVE the '$' sign
         String varName = m.group(0)!;
         if (varName.startsWith(r'${')) {
-          varName = varName.substring(2, varName.length - 1); // Remove ${ and }
+          varName = varName.substring(2, varName.length - 1);
         } else {
-          varName = varName.substring(1); // Remove $
+          varName = varName.substring(1);
         }
-        segments.add(varName); // Add raw variable name for concatenation
+        segments.add(varName);
 
         lastMatchEnd = m.end;
       }
 
-      // 3. Encrypt text segment AFTER the last variable
       if (lastMatchEnd < fullValue.length) {
         final String text = fullValue.substring(lastMatchEnd);
         segments.add(
             "SecureEncryption.decode('${SecureEncryption.encode(text, key)}')");
       }
 
-      // Join with + so it results in: decode('...') + version + decode('...')
-      return "$prefix ${segments.join(' + ')}";
+      resultBody = segments.join(' + ');
+    } else {
+      resultBody =
+          "SecureEncryption.decode('${SecureEncryption.encode(fullValue, key)}')";
     }
 
-    return "$prefix SecureEncryption.decode('${SecureEncryption.encode(fullValue, key)}')";
+    // Return the patched line with the original string as a comment at the end
+    return "$prefix $resultBody; // '$fullValue'";
   });
 
   file.writeAsStringSync(patched);
